@@ -1,0 +1,7 @@
+@import "demo.css";
+
+.container{ max-width: 992px; }
+#masthead{ z-index: 999999; }
+header small{ padding-left: 15px; }
+footer{ position: fixed; bottom: 0; background: #fff; padding: 5px; font-size: 12px; left: 0; right: 0; }
+footer iframe{ width: auto !important; vertical-align: middle; }

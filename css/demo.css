@@ -1,0 +1,123 @@
+.tooltip {
+	display: inline-block;
+	position: relative;
+	margin: 38px;
+	width: 83px;
+	opacity: 1;
+	z-index: 1;
+}
+.tooltip-indicator:hover + .tooltip-box{
+	opacity: 1;
+	visibility: visible;
+	transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-moz-transform: translate3d(0px, 0px, 0px);
+} 
+.tooltip-box{
+	background: #f5f5f5;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	width: 230px;
+	position: absolute;
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	-webkit-transition: 
+	  opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	-moz-transition:    
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	transition:         
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform:    translate3d(0, 0, 0);
+	transform:         translate3d(0, 0, 0);
+	pointer-events: none;
+}
+
+/****** top and bottom ******/
+.tooltip-box[tip-dir="top"], .tooltip-box[tip-dir="bottom"] {
+	left: 50%;
+	margin:-15px 0 10px -115px;
+}
+.tooltip-box[tip-dir="top"]:before, .tooltip-box[tip-dir="bottom"]:before {
+	content: '';
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	width: 0;
+	height: 0px;
+	border-left: solid 8px transparent;
+	border-right: solid 8px transparent;
+	margin-left: -9px;
+}
+/****** top ******/
+.tooltip-box[tip-dir="top"]{
+	bottom: 100%;
+	transform: translateY(-12px);
+	-webkit-transform: translateY(-12px);
+	-moz-transform: translateY(-12px);
+}
+.tooltip-box[tip-dir="top"]:before{
+	bottom: -10px;
+	border-top: solid 9px #ccc;
+}
+/****** bottom ******/
+.tooltip-box[tip-dir="bottom"] {
+	top: 100%;
+	transform: translateY(12px);
+	-webkit-transform: translateY(12px);
+	-moz-transform: translateY(12px);
+}
+.tooltip-box[tip-dir="bottom"]:before {
+	top: -10px;
+	border-bottom: solid 9px #ccc;
+}
+
+/****** left and right ******/
+.tooltip-box[tip-dir="left"], .tooltip-box[tip-dir="right"]{
+	top: 50%;
+	margin-top: -33px;
+}
+.tooltip-box[tip-dir="left"]:before,.tooltip-box[tip-dir="right"]:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	width: 8px;
+	height: 0px;
+	border-top: solid 8px transparent;
+	border-bottom: solid 8px transparent;
+	margin-top: -8px;
+}
+/****** left ******/
+.tooltip-box[tip-dir="left"]{
+	right: 100%;
+	transform: translateX(-12px);
+	-webkit-transform: translateX(-12px);
+	-moz-transform: translateX(-12px);
+	text-align:right
+}
+.tooltip-box[tip-dir="left"]:before {
+	right: -10px;
+	border-left: solid 9px #ccc;
+}
+/****** right ******/
+.tooltip-box[tip-dir="right"]{
+	left: 100%;
+	margin-left:9px;
+	transform: translateX(12px);
+	-webkit-transform: translateX(12px);
+	-moz-transform: translateX(12px);
+	text-align:left
+}
+.tooltip-box[tip-dir="right"]:before{
+	left: -10px;
+	border-right: solid 9px #ccc;
+}
